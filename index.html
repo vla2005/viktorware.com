@@ -473,7 +473,8 @@ a.card:hover,a.card:focus-visible{color:#fff}
 .c-submit{min-height:46px;padding:0 22px;display:inline-flex;align-items:center;gap:10px;font:12px var(--px);cursor:pointer}
 .c-submit:disabled{opacity:.6;cursor:not-allowed}
 .c-feedback{display:none;padding:12px 16px;border-radius:10px;font:12px var(--mono);line-height:1.4;flex:1 1 260px}
-.c-feedback.success{display:block;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.4);color:var(--g)}
+.c-feedback.success{display:flex;align-items:center;gap:10px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.4);color:var(--g);animation:fadeSlideIn .3s cubic-bezier(.2,.8,.2,1)}
+  @keyframes fadeSlideIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .c-feedback.error{display:block;background:rgba(248,81,73,.12);border:1px solid rgba(248,81,73,.4);color:#F85149}
 </style>
 </head>
@@ -834,7 +835,7 @@ var D = {
       cfMsgPh: 'Escreva sua mensagem (entre 10 e 3.000 caracteres)...',
       cfSubmit: 'Enviar mensagem',
       cfSending: 'Enviando...',
-      cfSuccess: 'Mensagem enviada com sucesso',
+      cfSuccess: 'Mensagem enviada com sucesso! Responderei em breve.',
       cfErrName: 'Nome deve ter entre 2 e 100 caracteres.',
       cfErrEmail: 'Endereço de email inválido (até 254 caracteres).',
       cfErrSubj: 'Selecione um assunto válido.',
@@ -887,7 +888,7 @@ var D = {
       cfMsgPh: 'Write your message (between 10 and 3,000 characters)...',
       cfSubmit: 'Send message',
       cfSending: 'Sending...',
-      cfSuccess: 'Message sent successfully',
+      cfSuccess: 'Message sent successfully! I will reply soon.',
       cfErrName: 'Name must be between 2 and 100 characters.',
       cfErrEmail: 'Invalid email address (up to 254 characters).',
       cfErrSubj: 'Select a valid subject.',
@@ -1509,7 +1510,7 @@ function initContactForm() {
       if (res.status === 200 && res.data && res.data.ok) {
         form.reset();
         charCount.textContent = '0';
-        feedbackEl.className = 'c-feedback success';
+        feedbackEl.className = 'c-feedback success'; feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         feedbackEl.textContent = '✓ ' + t.cfSuccess;
       } else if (res.status === 422) {
         feedbackEl.className = 'c-feedback error';
