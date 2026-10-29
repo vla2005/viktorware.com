@@ -1,0 +1,16 @@
+# Cloned external references
+ex-pulso/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependencies
+node_modules/
