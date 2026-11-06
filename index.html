@@ -158,66 +158,9 @@ a{color:#38BDF8}
 .stage{position:sticky;top:0;z-index:5;flex:0 0 clamp(360px,36vw,480px);max-width:480px;align-self:flex-start;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center;perspective:1500px;background:radial-gradient(520px circle at 50% 58%,rgba(56,189,248,.10),transparent 70%),var(--bg)}
 .content{flex:1 1 auto;min-width:0;padding:0 clamp(16px,4vw,72px) 0 clamp(16px,2vw,36px)}
 
-/* stage decor */
-.floor{position:absolute;left:-20%;right:-20%;bottom:-12%;height:52%;transform:perspective(700px) rotateX(72deg);transform-origin:center bottom;background-image:linear-gradient(rgba(56,189,248,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.14) 1px,transparent 1px);background-size:46px 46px;background-position:0 calc(var(--gp,0) * 900px);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%)}
-.glow{position:absolute;left:50%;top:74%;width:420px;height:90px;margin-left:-210px;border-radius:50%;background:radial-gradient(closest-side,rgba(56,189,248,.28),transparent);filter:blur(8px)}
-.hud{position:absolute;left:24px;top:84px;display:flex;flex-direction:column;gap:6px;font:10px var(--px);color:var(--f3)}
-.segs{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:5px}
-.segs i{display:block;width:26px;height:6px;background:var(--line);transition:background .3s}
-.segs i.done{background:var(--g3)}
-.segs i.on{background:var(--g)}
-
-/* rack */
-.rack-scale,.rack-bob{transform-style:preserve-3d}
-.rack-bob{animation:bob 7s ease-in-out infinite}
-.rack{position:relative;width:300px;height:460px;transform-style:preserve-3d;transform:rotateX(var(--rx,15deg)) rotateY(var(--ry,40deg))}
-.face{position:absolute;pointer-events:none}
-.f-back{inset:0;transform:translateZ(-300px);background:#05070A;border:1px solid #161B22}
-.f-left{left:0;top:0;width:300px;height:460px;transform-origin:left center;transform:rotateY(90deg);background-color:#0D1116;background-image:repeating-linear-gradient(90deg,transparent 0 22px,rgba(0,0,0,.5) 22px 24px),linear-gradient(90deg,#11161C,#0A0D11);border:1px solid var(--line)}
-.f-right{left:300px;top:0;width:300px;height:460px;transform-origin:left center;transform:rotateY(90deg);background:linear-gradient(90deg,#0E1217,#090C10);border:1px solid var(--line)}
-.f-top{left:0;top:0;width:300px;height:300px;transform-origin:center top;transform:rotateX(-90deg);background-color:#141920;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.4px);background-size:9px 9px;border:1px solid var(--line3)}
-.f-bot{left:0;top:460px;width:300px;height:300px;transform-origin:center top;transform:rotateX(-90deg);background:#05070A}
-.post{position:absolute;top:0;width:13px;height:460px;transform:translateZ(1px);background-color:#1B2028;background-image:radial-gradient(var(--bg) 1.5px,transparent 1.8px);background-size:13px 13px;background-position:center;pointer-events:none}
-.post.l{left:0;border-right:1px solid var(--line3)}
-.post.r{right:0;border-left:1px solid var(--line3)}
-.cap{position:absolute;left:0;right:0;height:18px;transform:translateZ(1px);background:#161B22;display:flex;align-items:center;justify-content:center;font:8px var(--px);color:var(--f3);pointer-events:none}
-.cap.t{top:0;border-bottom:1px solid var(--line3)}
-.cap.b{bottom:0;border-top:1px solid var(--line3)}
-.door{position:absolute;inset:0;transform-origin:left center;transform:translateZ(10px) rotateY(calc(var(--door,0) * -102deg));border:1px solid #3A424D;border-radius:6px;background-color:rgba(12,16,22,.8);background-image:linear-gradient(115deg,rgba(255,255,255,.08),transparent 40%),radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:auto,7px 7px;opacity:calc(1 - var(--door,0) * .6);pointer-events:none}
-.door-lcd{position:absolute;left:50%;top:34px;transform:translateX(-50%)}
-.door-lcd,.vault-lcd{display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line3);border-radius:4px;background:#05070A;font:11px var(--px);color:var(--g);white-space:nowrap}
-.door-lcd i,.vault-lcd i{display:block;width:5px;height:5px;background:var(--g)}
-.door-handle{position:absolute;right:14px;top:42%;width:7px;height:84px;border-radius:4px;background:linear-gradient(90deg,#2A313B,#4A535F,#2A313B)}
-.door-hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);font:9px var(--px);color:var(--f3);white-space:nowrap}
-#units{position:absolute;inset:0;transform-style:preserve-3d}
-.unit{position:absolute;left:14px;width:272px;height:46px;transform-style:preserve-3d;transform:translateZ(calc(-6px + var(--o,0) * 150px))}
-.unit-top{position:absolute;left:0;top:0;width:272px;height:170px;transform-origin:center top;transform:rotateX(-90deg);background:linear-gradient(#1C222A,#0C0F14);border:1px solid var(--line3)}
-.unit-side{position:absolute;left:0;top:0;width:170px;height:46px;transform-origin:left center;transform:rotateY(90deg);background:linear-gradient(90deg,#131820,#0A0D11);border:1px solid var(--line3)}
-.unit-front{position:absolute;inset:0;display:flex;align-items:center;gap:8px;padding:0 9px;border:1px solid #2A313B;border-radius:4px;background:linear-gradient(#181D25,#0F1318);color:var(--f2);font:9px var(--px);text-align:left}
-button.unit-front{cursor:pointer;transition:filter .2s}
-button.unit-front:hover{filter:brightness(1.35)}
-.screws{display:flex;flex-direction:column;gap:22px}
-.screws i{display:block;width:4px;height:4px;border-radius:50%;background:#3D444D}
+/* Shared indicators also used by section cards and the project dialog. */
 .leds{display:flex;gap:3px}
 .leds i{display:block;width:5px;height:5px}
-.u-name{display:flex;flex-direction:column;line-height:1.25}
-.u-name b{font-weight:400;color:var(--g)}
-.u-name span{color:#C9D1D9}
-.vent{flex:1;align-self:stretch;margin:9px 0;border-radius:2px;background-image:repeating-linear-gradient(90deg,#0A0D11 0 2px,transparent 2px 5px)}
-.dm{display:grid;grid-template-columns:repeat(7,3px);gap:1px;padding:4px;border-radius:3px;background:var(--bg)}
-.dm i{display:block;width:3px;height:3px;background:#151A21}
-.dm i.on{background:var(--g)}
-.u-glow{position:absolute;inset:-1px;border:1px solid var(--g);border-radius:4px;box-shadow:0 0 22px rgba(56,189,248,.5),inset 0 0 14px rgba(56,189,248,.18);opacity:var(--o,0);pointer-events:none}
-.beam{position:absolute;left:100%;top:50%;width:260px;height:2px;margin-top:-1px;background:linear-gradient(90deg,var(--g),rgba(56,189,248,0));opacity:var(--o,0);pointer-events:none}
-.ports{flex:1;display:grid;grid-template-columns:repeat(12,1fr);gap:3px;padding:0 4px}
-.ports span{display:flex;flex-direction:column;gap:2px;align-items:center}
-.ports b{display:block;width:9px;height:7px;border-radius:1px;background:var(--bg);border:1px solid var(--line3)}
-.ports i{display:block;width:4px;height:3px}
-.bays{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.bays span{position:relative;height:26px;border-radius:2px;border:1px solid var(--line3);background-image:repeating-linear-gradient(#0A0D11 0 2px,#12171D 2px 4px)}
-.bays i{position:absolute;right:3px;top:3px;width:4px;height:4px;background:var(--g)}
-.fan{position:relative;width:32px;height:32px;border-radius:50%;border:1px solid var(--line2);background:var(--bg);overflow:hidden}
-.fan i{position:absolute;inset:3px;border-radius:50%;background:conic-gradient(#30363D 0 30deg,transparent 30deg 90deg,#30363D 90deg 120deg,transparent 120deg 180deg,#30363D 180deg 210deg,transparent 210deg 270deg,#30363D 270deg 300deg,transparent 300deg);animation:spin .8s linear infinite}
 
 /* hero */
 .hero{min-height:100vh;min-height:100svh;padding:110px 0 64px;display:flex;flex-direction:column;justify-content:center;gap:30px}
@@ -263,38 +206,10 @@ button.unit-front:hover{filter:brightness(1.35)}
 
 /* projects */
 
-/* vault: pixel door of server U02 */
-.bay{position:relative;display:grid;place-items:center;padding:clamp(26px,3vw,40px) 16px;border:1px solid var(--line3);border-radius:16px;overflow:hidden;background:radial-gradient(420px circle at 50% 40%,rgba(56,189,248,.12),transparent 65%),var(--p2)}
-.bay::before{content:"";position:absolute;left:-30%;right:-30%;bottom:-38%;height:64%;transform:perspective(500px) rotateX(70deg);transform-origin:center bottom;background-image:linear-gradient(rgba(56,189,248,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.12) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 15%,transparent 65%);mask-image:radial-gradient(ellipse at 50% 20%,#000 15%,transparent 65%);pointer-events:none}
-.vault{--u:7px;position:relative;display:flex;flex-direction:column;align-items:center;gap:calc(var(--u) * 3);padding:8px;border:0;border-radius:12px;background:none;color:var(--fg);font:inherit;cursor:pointer}
-.vault-frame{position:relative;display:block;margin:calc(var(--u) * 2)}
-.vault-frame::after{content:"";position:absolute;left:-35%;right:-35%;bottom:calc(var(--u) * -6);height:calc(var(--u) * 4);background:radial-gradient(closest-side,rgba(56,189,248,.5),transparent);opacity:.3;transition:opacity .3s;pointer-events:none}
-.vault-door{position:relative;display:block;width:calc(var(--u) * 32);height:calc(var(--u) * 40);overflow:hidden;background:#03100A;box-shadow:0 0 0 var(--u) #1B2028,0 0 0 calc(var(--u) * 2) #0A0D12,calc(var(--u) * 2) calc(var(--u) * 2) 0 calc(var(--u) * 2) rgba(0,0,0,.45)}
-.vault-in{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);align-content:center;gap:var(--u);padding:0 calc(var(--u) * 5);background:radial-gradient(closest-side,rgba(56,189,248,.5),rgba(56,189,248,.1) 70%,transparent),repeating-linear-gradient(transparent 0 calc(var(--u) - 1px),rgba(0,0,0,.35) calc(var(--u) - 1px) var(--u)),#03100A}
-.vault-in i{display:block;height:calc(var(--u) * 6);background:linear-gradient(var(--g) 0 var(--u),rgba(56,189,248,.18) var(--u));box-shadow:inset 0 0 0 2px var(--g);opacity:.85}
-.vault-leaf{position:absolute;top:0;bottom:0;width:50%;transition:transform .3s steps(3)}
-.vault-leaf svg{display:block;width:100%;height:100%}
-.vault-leaf.l{left:0}
-.vault-leaf.r{right:0}
-.vault-leaf.r svg{transform:scaleX(-1)}
-.vault:hover .vault-leaf.l,.vault:focus-visible .vault-leaf.l{transform:translateX(calc(var(--u) * -1))}
-.vault:hover .vault-leaf.r,.vault:focus-visible .vault-leaf.r{transform:translateX(var(--u))}
-.vault.open .vault-leaf{transition:transform .36s steps(8)}
-.vault.open .vault-leaf.l{transform:translateX(-100%)}
-.vault.open .vault-leaf.r{transform:translateX(100%)}
-.vault:hover .vault-frame::after,.vault:focus-visible .vault-frame::after,.vault.open .vault-frame::after{opacity:1}
-.vault-cta{display:flex;align-items:center;gap:10px;min-height:42px;padding:0 16px;border:1px solid rgba(56,189,248,.45);border-radius:10px;background:rgba(56,189,248,.08);font:12px var(--px);color:var(--g);transition:background .2s}
-.vault-cta svg{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
-.vault:hover .vault-cta{background:rgba(56,189,248,.16)}
-.vault:hover .vault-cta svg{transform:translateX(4px)}
-
-/* server U02: portal and room */
+/* Project gallery dialog; cartridge materials live in cartridge.css. */
 html.srv-lock{overflow:hidden;scrollbar-gutter:stable}
 .srv{position:fixed;inset:0;width:100vw;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;color:var(--fg);overflow:hidden}
 .srv::backdrop{background:transparent}
-.srv-portal{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;overflow:hidden;border:1px solid var(--g);border-radius:4px;background:radial-gradient(60% 60% at 50% 50%,rgba(56,189,248,.16),transparent),linear-gradient(#181D25,#0F1318);box-shadow:0 0 22px rgba(56,189,248,.5),inset 0 0 40px rgba(56,189,248,.18)}
-.srv-portal::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(transparent 0 3px,rgba(0,0,0,.25) 3px 4px);pointer-events:none}
-.srv-portal .boot{min-height:62px;font-size:12px}
 .room{--r-line:rgba(255,255,255,.14);--r-edge:rgba(255,255,255,.38);--r-f2:rgba(255,255,255,.6);position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;opacity:0;pointer-events:none;background:#000;color:#fff}
 .srv.in .room{opacity:1;pointer-events:auto;animation:scan .45s steps(9) both}
 .room-w{max-width:1440px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
@@ -333,7 +248,6 @@ a.card:hover,a.card:focus-visible{color:#fff}
 @media (min-width:680px){.room-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1100px){.room-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:560px){.room-x{padding:0 13px}.room-x-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
-@media (max-width:420px){.vault{--u:6px}}
 @media (hover:none){.room-x kbd{display:none}}
 @media (hover:hover){
   .card:hover{border-color:#fff}
@@ -431,17 +345,13 @@ a.card:hover,a.card:focus-visible{color:#fff}
   @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 }
 
-/* mobile and tablets: hide 3D server section completely */
+/* mobile and tablets: content retains its existing single-column layout */
 @media (max-width:1023px), (max-width:1100px) and (orientation:portrait){
-  .stage{display:none !important}
   .layout{display:block;width:100%}
   .content{width:100%;max-width:840px;margin:0 auto;padding:0 clamp(16px,4.5vw,36px)}
   .sec{min-height:0;padding:48px 0;scroll-margin-top:72px}
   .hero{min-height:0;padding-top:clamp(80px,12vh,120px);padding-bottom:40px}
   @keyframes blade{from{opacity:0;transform:perspective(1400px) translateX(-40px) rotateY(12deg) scale(.98)}to{opacity:1;transform:none}}
-}
-@media (min-width:1024px) and (max-width:1200px){
-  .rack-scale{transform:scale(.85)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -477,27 +387,10 @@ a.card:hover,a.card:focus-visible{color:#fff}
   @keyframes fadeSlideIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .c-feedback.error{display:block;background:rgba(248,81,73,.12);border:1px solid rgba(248,81,73,.4);color:#F85149}
 </style>
+<link rel="stylesheet" href="./processor.css">
+<link rel="stylesheet" href="./cartridge.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <pattern id="hz" width="4" height="4" patternUnits="userSpaceOnUse"><path fill="#E3B341" d="M0 0h2v1H0zM1 1h2v1H1zM2 2h2v1H2zM3 3h1v1H3zM0 3h1v1H0z"/></pattern>
-    <symbol id="leaf" viewBox="0 0 16 40" shape-rendering="crispEdges">
-      <path fill="#161B22" d="M0 0h16v40H0z"/>
-      <path fill="#262C35" d="M0 0h15v1H0zM0 1h1v38H0z"/>
-      <path fill="#0A0D12" d="M15 0h1v40h-1zM1 39h14v1H1z"/>
-      <path fill="#30363D" d="M2 3h11v14H2zM2 20h11v11H2z"/>
-      <path fill="#0F1318" d="M3 4h9v12H3zM3 21h9v9H3z"/>
-      <path fill="#1F242C" d="M4 6h7v1H4zM4 8h7v1H4zM4 10h7v1H4zM4 12h7v1H4zM4 14h7v1H4zM4 23h7v3H4z"/>
-      <path fill="#38BDF8" d="M5 24h1v1H5z"/>
-      <path fill="#3D444D" d="M1 1h1v1H1zM13 1h1v1h-1zM1 38h1v1H1zM13 38h1v1h-1z"/>
-      <path fill="#4A535F" d="M13 18h1v6h-1z"/>
-      <path fill="#6E7681" d="M13 18h1v1h-1z"/>
-      <path fill="#0A0D12" d="M1 33h14v5H1z"/>
-      <path fill="url(#hz)" d="M1 33h14v5H1z"/>
-    </symbol>
-  </defs>
-</svg>
 <header class="hdr">
   <div class="hdr-in">
     <a class="logo" href="#top" aria-label="viktorware.com">
@@ -520,33 +413,7 @@ a.card:hover,a.card:focus-visible{color:#fff}
 </header>
 
 <div class="layout" id="top">
-  <div class="stage" id="stage">
-    <div class="floor" aria-hidden="true"></div>
-    <div class="glow" aria-hidden="true"></div>
-    <div class="rack-scale">
-      <div class="rack-bob">
-        <div class="rack" id="rack">
-          <div class="face f-back" aria-hidden="true"></div>
-          <div class="face f-left" aria-hidden="true"></div>
-          <div class="face f-right" aria-hidden="true"></div>
-          <div class="face f-top" aria-hidden="true"></div>
-          <div class="face f-bot" aria-hidden="true"></div>
-          <div id="units"></div>
-          <div class="post l" aria-hidden="true"></div>
-          <div class="post r" aria-hidden="true"></div>
-          <div class="cap t" aria-hidden="true">rack df-01</div>
-          <div class="cap b" aria-hidden="true"></div>
-          <div class="door" aria-hidden="true">
-            <span class="door-lcd"><i class="blink"></i>viktorware.com</span>
-            <span class="door-handle"></span>
-            <span class="door-hint" data-t="doorHint"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hud" aria-hidden="true"><span>rack df-01 · brasília</span><span class="g" id="hud"></span></div>
-    <div class="segs" id="segs" aria-hidden="true"></div>
-  </div>
+  <div class="stage" id="stage"></div>
 
   <main class="content">
     <section class="hero" aria-labelledby="hero-name">
@@ -600,19 +467,23 @@ a.card:hover,a.card:focus-visible{color:#fff}
         <div class="bb">
           <div style="display:flex;flex-direction:column;gap:12px">
             <h2 class="h2" id="s2-title" data-title="2">Coisas que eu construí</h2>
-            <p class="p" data-t="s2p">Apps publicados, ferramentas e landing pages. Abra a porta do servidor U02 para entrar e ver cada site.</p>
+            <p class="p" data-t="s2p">Sistemas web, aplicativos mobile, automações com IA e landing pages. Explore o cartucho U02 para visualizar prévias e abrir a galeria completa.</p>
           </div>
           <div class="bay">
-            <button type="button" class="vault" id="vault" aria-haspopup="dialog" aria-controls="srv" data-open data-ta="vaultAria">
-              <span class="vault-lcd" aria-hidden="true"><i class="blink"></i>U02 · <span data-t="p2"></span></span>
-              <span class="vault-frame" aria-hidden="true">
-                <span class="vault-door">
-                  <span class="vault-in"><i></i><i></i><i></i><i></i><i></i><i></i></span>
-                  <span class="vault-leaf l"><svg viewBox="0 0 16 40" preserveAspectRatio="none"><use href="#leaf"/></svg></span>
-                  <span class="vault-leaf r"><svg viewBox="0 0 16 40" preserveAspectRatio="none"><use href="#leaf"/></svg></span>
+            <button type="button" class="cartridge-trigger" id="vault" aria-haspopup="dialog" aria-controls="srv" data-open data-ta="vaultAria">
+              <span class="cartridge-scene" aria-hidden="true">
+                <span class="cartridge-body">
+                  <span class="cartridge-shell">
+                    <i class="cartridge-screw"></i><i class="cartridge-screw"></i><i class="cartridge-screw"></i><i class="cartridge-screw"></i>
+                    <span class="cartridge-tag">U02 <span data-t="p2"></span></span>
+                    <span class="cartridge-sub" data-t="cartridgeLabel"></span>
+                    <span class="cartridge-previews"></span>
+                  </span>
+                  <span class="cartridge-pins"></span>
                 </span>
+                <span class="cartridge-socket"><span class="cartridge-slot"></span><svg class="cpu-logo" viewBox="0 0 20 20"><path fill="currentColor" d="M2 2h4v4H2zM14 2h4v4h-4zM2 8h4v4H2zM14 8h4v4h-4zM8 14h4v4H8z"/></svg><span class="cartridge-dock-fins"></span></span>
               </span>
-              <span class="vault-cta"><span data-t="vaultCta">entrar no servidor</span><svg class="pxi" aria-hidden="true" width="10" height="10" viewBox="0 0 8 8" shape-rendering="crispEdges"><path fill="currentColor" d="M2 0h1v1H2zM3 1h1v1H3zM4 2h1v1H4zM5 3h1v2H5zM4 5h1v1H4zM3 6h1v1H3zM2 7h1v1H2z"/></svg></span>
+              <span class="cartridge-cta" data-t="vaultCta">Explorar projetos</span>
             </button>
           </div>
         </div>
@@ -739,9 +610,12 @@ a.card:hover,a.card:focus-visible{color:#fff}
 </div>
 
 <dialog class="srv" id="srv" aria-labelledby="srv-title">
+  <div class="cartridge-flight" id="cartridgeFlight" aria-hidden="true"></div>
+  <button type="button" class="cartridge-cancel" id="cartridgeCancel" data-leave aria-label="Voltar ao portfólio">×</button>
   <div class="srv-portal" id="srvPortal" aria-hidden="true">
-    <span class="vault-lcd"><span class="leds"><i class="blink3" style="background:#38BDF8"></i><i class="blink2" style="background:#0EA5E9"></i><i style="background:#E3B341"></i></span>U02 · <span data-t="p2"></span></span>
+    <span class="cartridge-tag">U02 <span data-t="p2"></span></span>
     <div class="boot" id="srvBoot"></div>
+    <div class="cartridge-holograms" id="cartridgeHolograms"></div>
   </div>
   <div class="room" id="srvRoom">
     <div class="room-bar">
@@ -754,27 +628,30 @@ a.card:hover,a.card:focus-visible{color:#fff}
           </div>
           <button type="button" class="room-x" id="srvClose" data-leave autofocus>
             <svg class="pxi" aria-hidden="true" width="11" height="11" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="currentColor" d="M0 0h1v1H0zM6 0h1v1H6zM1 1h1v1H1zM5 1h1v1H5zM2 2h1v1H2zM4 2h1v1H4zM3 3h1v1H3zM2 4h1v1H2zM4 4h1v1H4zM1 5h1v1H1zM5 5h1v1H5zM0 6h1v1H0zM6 6h1v1H6z"/></svg>
-            <span class="room-x-t" data-t="leave">sair do servidor</span>
+            <span class="room-x-t" data-t="leave">Voltar ao portfólio</span>
             <kbd>esc</kbd>
           </button>
         </div>
       </div>
     </div>
     <div class="room-w">
-      <h2 class="sr" id="srv-title" data-t="s2t">Coisas que eu construí</h2>
+      <h2 class="room-title" id="srv-title" data-t="galleryTitle">Projetos do U02</h2>
+      <p class="room-intro" data-t="galleryIntro"></p>
       <div class="room-grid" id="roomGrid"></div>
       <footer class="room-end">
         <p class="room-end-h" data-t="endH">Tem um projeto em mente?</p>
         <div class="room-end-a">
           <button type="button" class="room-btn" data-go="4"><span data-t="contactCta">falar comigo</span></button>
-          <button type="button" class="room-btn alt" data-leave><span data-t="back">voltar ao rack</span></button>
+          <button type="button" class="room-btn alt" data-leave><span data-t="back">Voltar ao portfólio</span></button>
         </div>
-        <span class="room-sig">rack df-01 · u02 · viktorware.com</span>
+        <span class="room-sig">modular compute · u02 · viktorware.com</span>
       </footer>
     </div>
   </div>
 </dialog>
 
+<script src="./processor.js"></script>
+<script src="./cartridge.js"></script>
 <script>
 (function () {
 'use strict';
@@ -802,11 +679,11 @@ var D = {
       s1t: 'Com o que eu trabalho', s2t: 'Projetos em destaque', s3t: 'Atividade no GitHub', s4t: 'Experiência e formação', s5t: 'Vamos conversar?',
       s1p: 'Minha base no backend é sólida com Java (Spring Boot) e PHP (Laravel). No frontend e mobile, construo SPAs e apps modernos com React, Vue.js, TypeScript e React Native (Expo). Em IA, desenvolvo sistemas agênticos, RAG e integrações via MCP e LLMs. Deploy conteinerizado com Docker em AWS, Oracle Cloud e Coolify.',
       stackComment: 'o que eu uso no dia a dia',
-      p2: '/projetos', procs: 'processos', s2p: 'Sistemas web, aplicativos mobile, automações com IA e landing pages. Abra a porta do servidor U02 para entrar e explorar os projetos.',
-      vaultCta: 'entrar no servidor', vaultAria: 'Entrar no servidor U02 para ver os projetos',
-      portal: ['> cd /u02/projetos', '[ ok ] {n} projetos montados', '[ .. ] acendendo as luzes'],
+      p2: '/projetos', procs: 'projetos', s2p: 'Sistemas web, aplicativos mobile, automações com IA e landing pages. Explore o cartucho U02 para visualizar prévias e abrir a galeria completa.',
+      vaultCta: 'Explorar projetos', vaultAria: 'Explorar os projetos do cartucho U02', cartridgeLabel: 'MÓDULO DE PROJETOS', galleryTitle: 'Projetos do U02', galleryIntro: 'Explore os sistemas, aplicações e soluções desenvolvidos no ecossistema Viktorware.',
+      portal: ['> montando módulo de projetos  [OK]', '> indexando prévias            [OK]', '> renderizando galeria         [...]', '> galeria pronta               [OK]'],
       local: 'em produção',
-      leave: 'sair do servidor', back: 'voltar ao rack', endH: 'Tem um projeto em mente?',
+      leave: 'Voltar ao portfólio', back: 'Voltar ao portfólio', endH: 'Tem um projeto em mente?',
       syncLive: 'ao vivo', syncAt: 'sincronizado em {d}', repos: '{n} repositórios públicos',
       stTotal: 'contribuições nos últimos 12 meses', stActive: 'dias com contribuição', stCur: 'dias seguidos agora', stLong: 'maior sequência (dias)', stBest: 'no melhor dia',
       tip: '{n} contribuições em {d}', tip0: 'Nenhuma contribuição em {d}', heatAria: 'Mapa de contribuições: {n} nos últimos 12 meses',
@@ -855,11 +732,11 @@ var D = {
       s1t: 'What I work with', s2t: 'Featured projects', s3t: 'GitHub activity', s4t: 'Experience & education', s5t: 'Let\'s talk?',
       s1p: 'My backend foundation is built with Java (Spring Boot) and PHP (Laravel). On frontend and mobile, I build SPAs and apps with React, Vue.js, TypeScript, and React Native (Expo). In AI, I engineer agentic systems, RAG, and LLM integrations via MCP. Containerized deploy with Docker on AWS, Oracle Cloud, and Coolify.',
       stackComment: 'what I use daily',
-      p2: '/projects', procs: 'processes', s2p: 'Web applications, mobile apps, AI automations, and landing pages. Open the U02 server door to explore all projects.',
-      vaultCta: 'enter server', vaultAria: 'Enter the U02 server to view projects',
-      portal: ['> cd /u02/projects', '[ ok ] {n} projects mounted', '[ .. ] turning on the lights'],
+      p2: '/projects', procs: 'projects', s2p: 'Web applications, mobile apps, AI automations, and landing pages. Explore the U02 cartridge to preview the projects and open the full gallery.',
+      vaultCta: 'Explore projects', vaultAria: 'Explore projects in the U02 cartridge', cartridgeLabel: 'PROJECT MODULE', galleryTitle: 'U02 projects', galleryIntro: 'Explore the systems, applications and solutions built in the Viktorware ecosystem.',
+      portal: ['> mounting project module  [OK]', '> indexing previews        [OK]', '> rendering showcase       [...]', '> showcase ready           [OK]'],
       local: 'in production',
-      leave: 'leave server', back: 'back to rack', endH: 'Have a project in mind?',
+      leave: 'Back to portfolio', back: 'Back to portfolio', endH: 'Have a project in mind?',
       syncLive: 'live', syncAt: 'synced on {d}', repos: '{n} public repos',
       stTotal: 'contributions in the last 12 months', stActive: 'days with contributions', stCur: 'day current streak', stLong: 'longest streak (days)', stBest: 'on best day',
       tip: '{n} contributions on {d}', tip0: 'No contributions on {d}', heatAria: 'Contribution graph: {n} in the last 12 months',
@@ -1080,44 +957,8 @@ var nf = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, S.lang
 var dLong = function (d) { var m = T().mon; return S.lang === 'pt' ? d.day + ' ' + m[d.m] + ' ' + d.y : m[d.m] + ' ' + d.day + ', ' + d.y; };
 var dShort = function (d) { var m = T().mon; return S.lang === 'pt' ? d.day + ' ' + m[d.m] : m[d.m] + ' ' + d.day; };
 
-/* ---------- rack ---------- */
-var DIGITS = { 0: ['111', '101', '101', '101', '111'], 1: ['010', '110', '010', '010', '111'], 2: ['111', '001', '111', '100', '111'], 3: ['111', '001', '111', '001', '111'], 4: ['101', '101', '111', '001', '001'], 5: ['111', '100', '111', '001', '111'] };
-function matrix(n) {
-  var out = '';
-  for (var r = 0; r < 5; r++) (DIGITS[0][r] + '0' + DIGITS[n][r]).split('').forEach(function (b) { out += b === '1' ? '<i class="on"></i>' : '<i></i>'; });
-  return out;
-}
-function renderUnits() {
-  var t = T(), screws = '<span class="screws" aria-hidden="true"><i></i><i></i></span>', html = '';
-  var list = [{ k: 'switch', y: 24 }];
-  t.units.forEach(function (_, i) { list.push({ k: 'sec', i: i, y: 24 + (i + 1) * 52 }); });
-  list.push({ k: 'disk', y: 336 }, { k: 'psu', y: 388 });
-  list.forEach(function (u) {
-    var inner = '', open = '', close = '';
-    if (u.k === 'sec') {
-      inner = '<span class="leds" aria-hidden="true"><i class="blink3" style="background:#38BDF8"></i><i class="' + (S.act === u.i ? 'blink2' : 'blink') + '" data-led style="background:#0EA5E9"></i><i style="background:#E3B341;opacity:var(--o,0)"></i></span>' +
-        '<span class="u-name"><b>U0' + (u.i + 1) + '</b><span>' + esc(t.units[u.i]) + '</span></span><span class="vent" aria-hidden="true"></span><span class="dm" aria-hidden="true">' + matrix(u.i + 1) + '</span>';
-      open = '<button type="button" class="unit-front" data-go="' + u.i + '" aria-label="' + esc(t.goTo + ' ' + t.units[u.i]) + '">';
-      close = '<span class="u-glow" aria-hidden="true"></span><span class="beam" aria-hidden="true"></span></button>';
-    } else {
-      open = '<div class="unit-front" aria-hidden="true">';
-      close = '</div>';
-      if (u.k === 'switch') {
-        var ports = '';
-        for (var p = 0; p < 12; p++) ports += '<span><b></b><i class="' + ['blink', 'blink2', '', 'blink3'][p % 4] + '" style="background:' + (p % 5 === 3 ? '#E3B341' : '#38BDF8') + '"></i></span>';
-        inner = '<span style="color:#7D8590">sw-01</span><span class="ports">' + ports + '</span>';
-      } else if (u.k === 'disk') {
-        inner = '<span style="color:#7D8590">nas</span><span class="bays"><span><i class="blink2"></i></span><span><i class="blink3"></i></span><span><i class="blink"></i></span><span><i></i></span></span>';
-      } else {
-        inner = '<span style="color:#7D8590">psu</span><span class="vent"></span><span class="fan"><i></i></span>';
-      }
-    }
-    html += '<div class="unit" style="top:' + u.y + 'px"' + (u.k === 'sec' ? ' data-unit="' + u.i + '"' : '') + '><span class="unit-top" aria-hidden="true"></span><span class="unit-side" aria-hidden="true"></span>' + open + screws + inner + screws + close + '</div>';
-  });
-  $('#units').innerHTML = html;
-  unitEls = $$('[data-unit]');
-}
-var unitEls = [];
+/* ---------- modular processor ---------- */
+var processor = typeof Processor !== 'undefined' ? Processor.mount($('#stage')) : null;
 
 /* ---------- static texts ---------- */
 function applyTexts() {
@@ -1142,7 +983,6 @@ function applyTexts() {
   $('#nav').innerHTML = t.units.map(function (u, i) {
     return '<a href="#u' + (i + 1) + '" aria-current="' + (S.act === i) + '"><b>0' + (i + 1) + '</b>' + esc(u.toLowerCase()) + '</a>';
   }).join('');
-  $('#segs').innerHTML = t.units.map(function () { return '<i></i>'; }).join('');
   $('#code').innerHTML = '<div><span>1</span><span class="cm"># ' + esc(t.stackComment) + '</span></div>' + D.stack.map(function (l, i) {
     return '<div><span>' + (i + 2) + '</span><span><span class="kw">from</span> <span class="mod">' + esc(L(l.m)) + '</span> <span class="kw">import</span> <span class="nm">' + esc(L(l.n)) + '</span></span></div>';
   }).join('');
@@ -1161,8 +1001,9 @@ function applyTexts() {
   
   renderJourney();
   renderProjects();
+  if (gallery) gallery.refresh();
   renderGh();
-  renderUnits();
+  if (processor) processor.setLanguage(S.lang);
   updateAct();
 }
 
@@ -1193,78 +1034,10 @@ function renderCard(p, i) {
   return p.site ? '<a' + attrs + ' href="' + esc(p.site) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div' + attrs + '>' + inner + '</div>';
 }
 
-/* ---------- server U02: door, portal and room ---------- */
-var srv = $('#srv'), portal = $('#srvPortal'), room = $('#srvRoom'), vault = $('#vault');
-var SRV = { busy: false, pending: false, after: null };
-var EASE = 'cubic-bezier(.76,0,.24,1)', FULL = { left: '0px', top: '0px', width: '100%', height: '100%' };
-function wait(ms) { return new Promise(function (r) { setTimeout(r, reduced ? 0 : ms); }); }
-function play(el, frames, ms, easing) {
-  if (reduced || !el.animate) return Promise.resolve();
-  return el.animate(frames, { duration: ms, easing: easing || EASE, fill: 'forwards' }).finished;
-}
-function stillOpen() { return srv.open ? Promise.resolve() : Promise.reject(new Error('closed')); }
-function unitBox() {
-  var u = $('[data-unit="1"] .unit-front'), r = u && u.getBoundingClientRect(), w = window.innerWidth, h = window.innerHeight;
-  if (!r || r.width < 2 || r.bottom < 0 || r.top > h || r.right < 0 || r.left > w) r = $('.vault-door').getBoundingClientRect();
-  return { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' };
-}
-function enterSrv() {
-  if (SRV.busy || srv.open || !srv.showModal) return;
-  SRV.busy = true;
-  vault.classList.add('open');
-  wait(360).then(function () {
-    var from = unitBox();
-    srv.classList.remove('in');
-    room.scrollTop = 0;
-    $('#srvBoot').innerHTML = '';
-    srv.showModal();
-    document.documentElement.classList.add('srv-lock');
-    try { history.pushState({ srv: 1 }, ''); } catch (e) {}
-    return play(portal, [from, FULL], 620);
-  }).then(stillOpen).then(function () {
-    $('#srvBoot').innerHTML = bootLines(T().portal.map(function (b) { return b.replace('{n}', D.projects.length); }), 0, 160);
-    return wait(560);
-  }).then(stillOpen).then(function () {
-    srv.classList.add('in');
-    return wait(450);
-  }).then(stillOpen).then(function () {
-    SRV.busy = false;
-    if (SRV.pending) exitSrv();
-  }).catch(function () {});
-}
-function exitSrv() {
-  if (SRV.busy) { SRV.pending = true; return; }
-  SRV.busy = true;
-  SRV.pending = false;
-  document.documentElement.classList.remove('srv-lock');
-  play(room, [{ opacity: 1 }, { opacity: 0 }], 200, 'ease').then(function () {
-    srv.classList.remove('in');
-    return play(portal, [FULL, unitBox()], 520);
-  }).then(function () { srv.close(); }).catch(function () {});
-}
-function leaveSrv(then) {
-  if (!srv.open) { if (then) then(); return; }
-  SRV.after = then || null;
-  if (history.state && history.state.srv) history.back(); else exitSrv();
-}
-srv.addEventListener('cancel', function (e) {
-  if (!e.cancelable) return;
-  e.preventDefault();
-  leaveSrv();
-});
-srv.addEventListener('close', function () {
-  [portal, room].forEach(function (el) { if (el.getAnimations) el.getAnimations().forEach(function (a) { a.cancel(); }); });
-  srv.classList.remove('in');
-  document.documentElement.classList.remove('srv-lock');
-  vault.classList.remove('open');
-  SRV.busy = false;
-  SRV.pending = false;
-  if (history.state && history.state.srv) history.back();
-  var then = SRV.after;
-  SRV.after = null;
-  if (then) then();
-});
-window.addEventListener('popstate', function () { if (srv.open) exitSrv(); });
+/* ---------- U02 cartridge and gallery ---------- */
+var gallery = Cartridge.mount({ projects: D.projects, texts: T });
+function enterSrv() { gallery.open(); }
+function leaveSrv(then) { gallery.close(then); }
 
 /* ---------- github ---------- */
 var LV = ['#161B22', '#0369A1', '#0284C7', '#0EA5E9', '#38BDF8'];
@@ -1333,15 +1106,11 @@ function renderJourney() {
   }).join('');
 }
 
-/* ---------- scroll: rack opens section by section ---------- */
-var stage = $('#stage'), bar = $('#bar'), secEls = [1, 2, 3, 4, 5].map(function (n) { return document.getElementById('u' + n); });
+/* ---------- scroll: existing navigation and processor share section bounds ---------- */
+var bar = $('#bar'), secEls = [1, 2, 3, 4, 5].map(function (n) { return document.getElementById('u' + n); });
 var scrTimer = null;
 function updateAct() {
-  var t = T();
   $$('#nav a').forEach(function (a, i) { a.setAttribute('aria-current', String(S.act === i)); });
-  $$('[data-led]').forEach(function (el, i) { el.className = S.act === i ? 'blink2' : 'blink'; });
-  $('#hud').textContent = S.act >= 0 ? 'U0' + (S.act + 1) + ' · ' + t.units[S.act] : t.hudIdle;
-  $$('#segs i').forEach(function (el, i) { el.className = i === S.act ? 'on' : i < S.act ? 'done' : ''; });
 }
 function scramble(i) {
   if (reduced) return;
@@ -1357,19 +1126,15 @@ function scramble(i) {
 }
 function sync() {
   var vh = window.innerHeight || 1, y = window.scrollY || window.pageYOffset;
-  var intro = smooth(clamp(y / (vh * 0.6)));
   var gp = clamp(y / Math.max(1, document.documentElement.scrollHeight - vh));
-  var best = -1, bestO = 0;
+  var best = -1, bestO = 0, bounds = { hero: $('.hero').getBoundingClientRect() };
   secEls.forEach(function (el, i) {
     var b = el.getBoundingClientRect();
     var o = smooth(Math.min(clamp((vh * 0.82 - b.top) / (vh * 0.4)), clamp((b.bottom - vh * 0.18) / (vh * 0.4))));
-    if (unitEls[i]) unitEls[i].style.setProperty('--o', o.toFixed(3));
+    bounds[el.id] = b;
     if (o > bestO) { bestO = o; best = i; }
   });
-  stage.style.setProperty('--door', intro.toFixed(3));
-  stage.style.setProperty('--ry', (40 - 24 * intro + 12 * gp).toFixed(2) + 'deg');
-  stage.style.setProperty('--rx', (15 - 8 * intro).toFixed(2) + 'deg');
-  stage.style.setProperty('--gp', gp.toFixed(4));
+  if (processor) processor.update(bounds, y);
   bar.style.transform = 'scaleX(' + gp.toFixed(4) + ')';
   var act = bestO > 0.35 ? best : -1;
   if (act !== S.act) { S.act = act; updateAct(); if (act >= 0) scramble(act); }
@@ -1382,7 +1147,7 @@ document.addEventListener('click', function (e) {
   var go = e.target.closest('[data-go]');
   if (go) {
     var sec = secEls[+go.getAttribute('data-go')];
-    leaveSrv(function () { sec.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); });
+    leaveSrv(function () { sec.setAttribute('tabindex', '-1'); sec.focus({ preventScroll: true }); sec.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); });
     return;
   }
   if (e.target.closest('[data-open]')) { enterSrv(); return; }
@@ -1404,6 +1169,12 @@ document.addEventListener('click', function (e) {
 });
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('resize', onScroll);
+window.addEventListener('hashchange', onScroll);
+if ('ResizeObserver' in window) {
+  var sectionObserver = new ResizeObserver(onScroll);
+  secEls.concat([$('.hero')]).forEach(function (el) { sectionObserver.observe(el); });
+}
+if (document.fonts) document.fonts.ready.then(onScroll);
 
 /* ---------- boot ---------- */
 /* ---------- contact form API integration ---------- */
@@ -1551,6 +1322,7 @@ renderName();
 initContactForm();
 applyTexts();
 sync();
+gallery.navigate();
 loadGitHub();
 var ghEl = $('#gh');
 if ('IntersectionObserver' in window && !reduced) {
