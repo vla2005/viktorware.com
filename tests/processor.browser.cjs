@@ -66,7 +66,7 @@ const output = process.env.PROCESSOR_SHOTS;
     // The original project experience still opens and closes.
     await page.locator('[data-open]').click();
     await page.waitForFunction(() => document.querySelector('#srv').classList.contains('in'));
-    assert.equal(await page.locator('#roomGrid .card').count(), 5);
+    assert.equal(await page.locator('#roomGrid .card').count(), 6);
     await page.waitForTimeout(500);
     await page.keyboard.press('Escape');
     await page.waitForFunction(() => !document.querySelector('#srv').open);
